@@ -2,8 +2,8 @@
 Generate wave art for an image.
 
 ### Requirements:
-- OpenCV
-- Numpy
+- OpenCV `pip install opencv-python`
+- Numpy `pip install numpy`
 
 #### Usage
 
