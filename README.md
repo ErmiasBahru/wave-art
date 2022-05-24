@@ -24,3 +24,5 @@ python main.py --image_path elon.jpg --patch_size 10
 #### Info:
 
 *The `patch_size` may be changed to obtain better results. Generally, values of 10, 15 or 20 work better.*
+
+**give me ⭐ if you like my project!**
