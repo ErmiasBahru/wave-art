@@ -8,8 +8,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--image_path", help="path to the image", required=True)
     parser.add_argument("--patch_size", default="15", help="patch size")
-    args = parser.parse_args()
-    return args
+    return parser.parse_args()
 
 
 if __name__ == "__main__":
@@ -19,12 +18,12 @@ if __name__ == "__main__":
     patch_size = int(args.patch_size)
     img_wave = np.ones(img.shape) * 255
 
+    e = 0.0000000001
     for i in tqdm.tqdm(range(0, img.shape[0]-patch_size, patch_size)):
         for j in range(0, img.shape[1]-patch_size, patch_size):
             patch = img[i:i+patch_size, j:j+patch_size]
 
             blackness = np.sum(patch) / patch_size**2
-            e = 0.0000000001
             frequency = (2*np.pi)/patch_size * np.log(np.sqrt(blackness)+e)
             amplitude = (1*patch_size) * (1-blackness/255)
 
